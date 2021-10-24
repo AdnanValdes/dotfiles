@@ -57,6 +57,8 @@ if [[ "$fromtxtfile" == "Y" ]]; then
 	readAppList programs.txt
 fi
 
+readInstallScripts ./priors/
+
 if [[ "$isheadless" == "Y" ]]; then
 	readInstallScripts ./basic/
 else
@@ -71,9 +73,5 @@ fi
 printf "\nLoading dconf configuration..."
 dconf load /org/gnome/ < ../settings.dconf
 
-printf "\nDone!\nStarting cleanup..."
-sudo apt upgrade -y
-sudo apt autoremove -y
 
-printf "\nAll programs have been installed. To set up `fish` as your default shell, either run `chsh -s \$(which fish)` or edit your `/etc/passwd` file. "
 printf "\nRespect and enjoy the peace."
