@@ -1,0 +1,12 @@
+# Basic programs
+neovim
+kitty
+guake
+
+# Utilities
+git
+htop
+tree
+
+# Misc
+spotify
