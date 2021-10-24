@@ -59,6 +59,10 @@ fi
 
 if [[ "$isheadless" == "Y" ]]; then
 	readInstallScripts ./basic/
+else
+	readInstallScripts ./basic/
+	readInstallScripts ./utilities/
+	readInstallScripts ./misc/
 fi
 # Create symlinks for dotfiles
 ./symlink_dotfiles.sh
