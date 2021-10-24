@@ -1,8 +1,19 @@
 #!/bin/bash
 
-# Update and upgrade OS
-sudo apt update && sudo apt full-upgrade -y
+read -p "Would you like to perform a full-upgrade? [Y/N]" choice
+read -p "Install programs from txt file? [Y/N]" fromtxtfile
+read -p "Is this a headless server? [Y/N]" isheadless
 
+choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
+fromtxtfile=$(echo "$fromtxtfile" | tr '[:lower:]' '[:upper:]')
+isheadless=$(echo "$isheadless" | tr '[:lower:]' '[:upper:]')
+
+
+if [[ "$choice" == "Y" ]]; then 
+	sudo apt update && sudo apt full-upgrade -y # Update and upgrade OS
+else
+	sudo apt update && sudo apt upgrade -y
+fi
 # Install function from https://github.com/victoriadrake/dotfiles
 function install {
   which $1 &> /dev/null
@@ -30,17 +41,25 @@ function readAppList {
 }
 
 
-readAppList programs.txt
+# Install programs using provided shell scritps in ..programs/*
+function readInstallScripts {
+	printf "Installing from %s...\n" "${1}"
+	for f in ../programs/${1}*.sh
+		do
+			printf "Installing %s...\n" "${f%%.*}"
+			bash "$f" -H
+		done
+}
 
-# Run shell scripts for more involved installs
-printf "Beginning complex installs..."
-for f in ../programs/installScripts/*.sh
-	do
-	printf "Installing %s...\n" ${f%%.*}
-	bash "$f" -H
-	printf "\nDone!"
-	done
 
+if [[ "$fromtxtfile" == "Y" ]]; then
+	printf "Reading programs.txt"
+	readAppList programs.txt
+fi
+
+if [[ "$isheadless" == "Y" ]]; then
+	readInstallScripts ./basic/
+fi
 # Create symlinks for dotfiles
 ./symlink_dotfiles.sh
 
