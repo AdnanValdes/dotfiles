@@ -73,5 +73,6 @@ fi
 printf "\nLoading dconf configuration..."
 dconf load /org/gnome/ < ../settings.dconf
 
-
+sudo apt update -y
+sudo apt autoremove -y
 printf "\nRespect and enjoy the peace."

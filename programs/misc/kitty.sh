@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install kitty
-set THEME https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/gruvbox_dark.conf
+THEME=https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/gruvbox_dark.conf
 wget "$THEME" -P ../.config/kitty/
-mv gruvbox_dark.conf theme.conf
+mv ../.config/kitty/gruvbox_dark.conf ../.config/kitty/theme.conf
 
