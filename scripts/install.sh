@@ -46,7 +46,7 @@ function readInstallScripts {
 	printf "Installing from %s...\n" "${1}"
 	for f in ../programs/${1}*.sh
 		do
-			printf "Installing %s...\n" "${f%%.*}"
+			printf "Running %s install script\n" "$f"
 			bash "$f" -H
 		done
 }
