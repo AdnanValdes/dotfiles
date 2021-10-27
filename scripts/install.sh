@@ -8,7 +8,6 @@ choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
 fromtxtfile=$(echo "$fromtxtfile" | tr '[:lower:]' '[:upper:]')
 isheadless=$(echo "$isheadless" | tr '[:lower:]' '[:upper:]')
 
-
 if [[ "$choice" == "Y" ]]; then 
 	sudo apt update && sudo apt full-upgrade -y # Update and upgrade OS
 else
@@ -66,12 +65,21 @@ else
 	readInstallScripts ./utilities/
 	readInstallScripts ./misc/
 fi
+
+
 # Create symlinks for dotfiles
 ./symlink_dotfiles.sh
 
 # Update dconf from personal settings
 printf "\nLoading dconf configuration..."
 dconf load /org/gnome/ < ../settings.dconf
+
+read -p "Remove pre-installed programs (some you have to do manually)?" removeInstalled
+removeInstalled=$(echo "$removeInstalled" | tr '[:lower:]' '[:upper:]')
+
+if [[ "$removeInstalled" == "Y" ]]; then
+	readInstallScripts ./cleanup/
+fi
 
 sudo apt update -y
 sudo apt autoremove -y
