@@ -1,5 +1,5 @@
 #!/bin/bash
-
+printf "Hello, and welcome!"
 read -p "Would you like to perform a full-upgrade? [Y/N]" choice
 read -p "Install programs from txt file? [Y/N]" fromtxtfile
 read -p "Is this a headless server? [Y/N]" isheadless
