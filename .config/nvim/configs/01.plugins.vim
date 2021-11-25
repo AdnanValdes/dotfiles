@@ -23,4 +23,5 @@ Plug 'preservim/nerdtree'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'machakann/vim-highlightedyank' " Highlights yank areas
 Plug 'morhetz/gruvbox' " Colorscheme choice
+Plug 'mattn/emmet-vim' " Expanding HTML abbreviations
 call plug#end()
