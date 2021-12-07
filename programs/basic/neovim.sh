@@ -1,4 +1,8 @@
 #!/bin/bash
 
-sudo apt install neovim
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+mv nvim.appimage $HOME/.local/bin
+
 pip install pynvim jedi
