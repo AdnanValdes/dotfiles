@@ -6,3 +6,5 @@ chmod u+x nvim.appimage
 mv nvim.appimage $HOME/.local/bin
 
 pip install pynvim jedi
+sudo apt-get install ripgrep -y
+

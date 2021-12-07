@@ -25,4 +25,5 @@ Plug 'machakann/vim-highlightedyank' " Highlights yank areas
 Plug 'morhetz/gruvbox' " Colorscheme choice
 Plug 'mattn/emmet-vim' " Expanding HTML abbreviations
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
