@@ -1,3 +1,3 @@
 function vault
-command  code /home/einhard/Dendron/dendron.code-workspace
+command  code ~/Dendron/dendron.code-workspace
 end
