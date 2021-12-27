@@ -26,5 +26,4 @@ Plug 'morhetz/gruvbox' " Colorscheme choice
 Plug 'mattn/emmet-vim' " Expanding HTML abbreviations
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
