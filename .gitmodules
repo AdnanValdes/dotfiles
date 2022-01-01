@@ -1,3 +1,18 @@
 [submodule ".config/nvim/plugged/coc.nvim"]
 	path = .config/nvim/plugged/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".config/.config/nvim/plugged/calendar-vim"]
+	path = .config/.config/nvim/plugged/calendar-vim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule ".config/.config/nvim/plugged/telekasten.nvim"]
+	path = .config/.config/nvim/plugged/telekasten.nvim
+	url = https://github.com/renerocksai/telekasten.nvim.git
+[submodule ".config/.config/nvim/plugged/telescope-media-files.nvim"]
+	path = .config/.config/nvim/plugged/telescope-media-files.nvim
+	url = https://github.com/nvim-telescope/telescope-media-files.nvim.git
+[submodule ".config/.config/nvim/plugged/telescope-symbols.nvim"]
+	path = .config/.config/nvim/plugged/telescope-symbols.nvim
+	url = https://github.com/nvim-telescope/telescope-symbols.nvim.git
+[submodule ".config/.config/nvim/plugged/vim-markdown-toc"]
+	path = .config/.config/nvim/plugged/vim-markdown-toc
+	url = https://github.com/mzlogin/vim-markdown-toc.git
