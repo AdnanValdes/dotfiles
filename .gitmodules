@@ -1,6 +1,3 @@
-[submodule ".config/nvim/plugged/coc.nvim"]
-	path = .config/nvim/plugged/coc.nvim
-	url = https://github.com/neoclide/coc.nvim.git
 [submodule ".config/.config/nvim/plugged/calendar-vim"]
 	path = .config/.config/nvim/plugged/calendar-vim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
