@@ -28,4 +28,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/popup.nvim'
 Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'renerocksai/telekasten.nvim'
+Plug 'renerocksai/calendar-vim'
+Plug 'nvim-telescope/telescope-symbols.nvim'
+Plug 'mzlogin/vim-markdown-toc'
 call plug#end()
