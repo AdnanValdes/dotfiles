@@ -13,3 +13,10 @@ set autoindent
 set wildmode=longest,list
 filetype plugin indent on
 syntax on
+
+" Telekasten settings
+hi tklink ctermfg=72 guifg=#689d6a cterm=bold,underline gui=bold,underline
+hi tkBrackets ctermfg=gray guifg=gray
+hi link CalNavi CalRuler
+hi tkTagSep ctermfg=gray guifg=gray
+hi tkTag ctermfg=175 guifg=#d3869B
