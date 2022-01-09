@@ -1,3 +1,3 @@
 function vault
-command  code ~/Dendron/dendron.code-workspace
+    nvim ~/vault/
 end

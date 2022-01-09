@@ -13,3 +13,9 @@
 [submodule ".config/.config/nvim/plugged/vim-markdown-toc"]
 	path = .config/.config/nvim/plugged/vim-markdown-toc
 	url = https://github.com/mzlogin/vim-markdown-toc.git
+[submodule ".config/nvim/plugged/indent-blankline.nvim"]
+	path = .config/nvim/plugged/indent-blankline.nvim
+	url = https://github.com/lukas-reineke/indent-blankline.nvim.git
+[submodule ".config/nvim/plugged/lualin.nvim"]
+	path = .config/nvim/plugged/lualin.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim.git
