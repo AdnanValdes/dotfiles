@@ -1,3 +1,4 @@
 function vault
-    nvim ~/vault/
+    cd ~/vault
+    nvim .
 end
