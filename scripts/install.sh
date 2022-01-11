@@ -1,86 +1,39 @@
 #!/bin/bash
-printf "Hello, and welcome!"
-read -p "Would you like to perform a full-upgrade? [Y/N]" choice
-read -p "Install programs from txt file? [Y/N]" fromtxtfile
-read -p "Is this a headless server? [Y/N]" isheadless
+printf "Hello, and welcome!\n"
+read -p "[Git configuration] Enter your email: " email
+read -p "[Git configuration] Enter your user name: " username
 
-choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
-fromtxtfile=$(echo "$fromtxtfile" | tr '[:lower:]' '[:upper:]')
-isheadless=$(echo "$isheadless" | tr '[:lower:]' '[:upper:]')
 
-if [[ "$choice" == "Y" ]]; then 
+
+distro="$(cat /etc/*-release | grep ^ID= | sed 's/.*[=]//')"
+distroFamily="$(cat /etc/*-release | grep ID_LIKE | sed 's/.*[=]//')"
+
+if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
 	sudo apt update && sudo apt full-upgrade -y # Update and upgrade OS
 else
-	sudo apt update && sudo apt upgrade -y
-fi
-# Install function from https://github.com/victoriadrake/dotfiles
-function install {
-  which $1 &> /dev/null
-
-  if [ $? -ne 0 ]; then
-    echo "Installing: ${1}..."
-    sudo apt install -y $1
-  else
-    echo "Already installed: ${1}"
-  fi
-}
-
-# Uses program names from textfile for installation
-function readAppList {
-	printf "\nInstalling apps listed in %s...\n" "$1"
-	while IFS= read -r line;
-		do
-			if [[ "$line" = \#* ]] 
-			then 
-				continue 
-			fi
-
-			install "$line"
-		done < ../apps/$1
-}
-
-
-# Install programs using provided shell scritps in ..programs/*
-function readInstallScripts {
-	printf "Installing from %s...\n" "${1}"
-	for f in ../programs/${1}*.sh
-		do
-			printf "Running %s install script\n" "$f"
-			bash "$f" -H
-		done
-}
-
-
-if [[ "$fromtxtfile" == "Y" ]]; then
-	printf "Reading programs.txt"
-	readAppList programs.txt
+    sudo pacman -Sy base-devel --noconfirm
+    sudo pacman -Syu --noconfirm
+    sudo pacman -S yay --noconfirm
 fi
 
-readInstallScripts ./priors/
-
-if [[ "$isheadless" == "Y" ]]; then
-	readInstallScripts ./basic/
-else
-	readInstallScripts ./basic/
-	readInstallScripts ./utilities/
-	readInstallScripts ./misc/
-fi
-
+# Install apps
+./app_installer.sh
 
 # Create symlinks for dotfiles
 ./symlink_dotfiles.sh
 
 # Update dconf from personal settings
 printf "\nLoading dconf configuration..."
-dconf load /org/gnome/ < ../settings.dconf
-
-read -p "Remove pre-installed programs (some you have to do manually)?" removeInstalled
-removeInstalled=$(echo "$removeInstalled" | tr '[:lower:]' '[:upper:]')
-
-if [[ "$removeInstalled" == "Y" ]]; then
-	readInstallScripts ./cleanup/
+if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
+    dconf load /org/gnome/ < ../settings_debian.dconf
+    printf "\nFinalizing and cleaningup..."
+    sudo apt update -y
+    sudo apt autoremove -y
+else
+    dconf load /org/gnome/ < ../settings_arch.conf
 fi
 
-sudo apt update -y
-sudo apt autoremove -y
+git config --global user.email "$email"
+git config --global user.name "$username"
+
 printf "\nRespect and enjoy the peace."
