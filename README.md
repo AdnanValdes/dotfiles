@@ -3,11 +3,10 @@
 </div>
 
 # my dotfiles
-<p align="center">
 dotfiles written for Pop!OS and Manjaro.
-</p>
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 ![Manjaro](https://img.shields.io/badge/Manjaro-35BF5C?style=for-the-badge&logo=Manjaro&logoColor=white)
 ![Pop! OS](https://img.shields.io/badge/Pop!_OS-48B9C7?style=for-the-badge&logo=Pop!_OS&logoColor=white)
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
