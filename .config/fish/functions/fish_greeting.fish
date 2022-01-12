@@ -1,4 +1,6 @@
 function fish_greeting
 	date
-	command nl -w2 -s'> ' ~/notes.txt
+    set dailies "$HOME/vault/fleeting"
+    set yesterday (date  --date="yesterday" +"%Y-%m-%d")
+	command sed 1,5d "$dailies/$yesterday.md"
 end

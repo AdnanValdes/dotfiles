@@ -10,8 +10,8 @@ require('telekasten').setup({
     --                               and thus the telekasten syntax will not be loaded either
     auto_set_filetype = true,
 
-    dailies      = home .. '/' .. 'daily',
-    weeklies     = home .. '/' .. 'weekly',
+    dailies      = home .. '/' .. 'fleeting',
+    weeklies     = home .. '/' .. 'fleeting/weekly',
     templates    = home .. '/' .. 'templates',
 
     -- image subdir for pasting
