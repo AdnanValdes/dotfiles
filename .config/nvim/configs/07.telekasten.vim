@@ -12,7 +12,7 @@ require('telekasten').setup({
 
     dailies      = home .. '/' .. 'fleeting',
     weeklies     = home .. '/' .. 'fleeting/weekly',
-    templates    = home .. '/' .. 'templates',
+    templates    = home .. '/' .. 'fleeting/templates',
 
     -- image subdir for pasting
     -- subdir name
@@ -29,15 +29,15 @@ require('telekasten').setup({
 
     -- template for new notes (new_note, follow_link)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_note = home .. '/' .. 'templates/new_note.md',
+    template_new_note = home .. '/' .. 'fleeting/templates/new_note.md',
 
     -- template for newly created daily notes (goto_today)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_daily = home .. '/' .. 'templates/daily.md',
+    template_new_daily = home .. '/' .. 'fleeting/templates/daily.md',
 
     -- template for newly created weekly notes (goto_thisweek)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_weekly= home .. '/' .. 'templates/weekly.md',
+    template_new_weekly= home .. '/' .. 'fleeting/templates/weekly.md',
 
     -- image link style
     -- wiki:     ![[image name]]
@@ -60,7 +60,7 @@ require('telekasten').setup({
     insert_after_inserting = true,
 
     -- tag notation: '#tag', ':tag:', 'yaml-bare'
-    tag_notation = ":tag:",
+    tag_notation = "#tag",
 
     -- command palette theme: dropdown (window) or ivy (bottom panel)
     command_palette_theme = "dropdown",

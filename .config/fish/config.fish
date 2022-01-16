@@ -30,3 +30,5 @@ end
 alias ls "exa"
 alias ssh "kitty +kitten ssh"
 alias vault "nvim $HOME/vault/"
+alias yeet "yay -Rcns"
+alias tree "exa -T"
