@@ -31,6 +31,9 @@ hi tkTag ctermfg=175 guifg=#d3869B
 
 " Disable Netrw on start
 let g:netrw_banner=0
+let ghregex='\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_list_hide=ghregex
+
 
 " LuaLine set up
 lua << END

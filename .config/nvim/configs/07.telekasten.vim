@@ -11,8 +11,8 @@ require('telekasten').setup({
     auto_set_filetype = true,
 
     dailies      = home .. '/' .. 'fleeting',
-    weeklies     = home .. '/' .. 'fleeting/weekly',
-    templates    = home .. '/' .. 'fleeting/templates',
+    weeklies     = home .. '/' .. 'fleeting',
+    templates    = home .. '/' .. 'templates',
 
     -- image subdir for pasting
     -- subdir name
