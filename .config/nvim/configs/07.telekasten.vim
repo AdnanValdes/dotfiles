@@ -10,8 +10,8 @@ require('telekasten').setup({
     --                               and thus the telekasten syntax will not be loaded either
     auto_set_filetype = true,
 
-    dailies      = home .. '/' .. 'fleeting',
-    weeklies     = home .. '/' .. 'fleeting',
+    dailies      = home .. '/' .. 'dailies',
+    weeklies     = home .. '/' .. 'weeklies',
     templates    = home .. '/' .. 'templates',
 
     -- image subdir for pasting
@@ -102,7 +102,7 @@ require('telekasten').setup({
     --     - same_as_current: put all new notes in the dir of the current note if
     --                        present or else in home
     --                        except for notes/with/subdirs/in/title.
-    new_note_location = "same_as_current",
+    new_note_location = "smart",
 
 })
 END
