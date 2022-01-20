@@ -1,3 +1,6 @@
+[submodule ".config/.config/nvim/plugged/telekasten.nvim"]
+    path = .config/.config/nvim/plugged/telekasten.nvim
+    url = https://github.com/renerocksai/telekasten.nvim.git
 [submodule ".config/.config/nvim/plugged/calendar-vim"]
 	path = .config/.config/nvim/plugged/calendar-vim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
