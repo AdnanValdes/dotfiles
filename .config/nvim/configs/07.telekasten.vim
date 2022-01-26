@@ -1,5 +1,5 @@
 lua << END
-local home = vim.fn.expand("~/vault")
+local home = vim.fn.expand("~/Archive/repository")
 require('telekasten').setup({
     home         = home,
 
