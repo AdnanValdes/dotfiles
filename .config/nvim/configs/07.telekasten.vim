@@ -1,5 +1,5 @@
 lua << END
-local home = vim.fn.expand("~/Archive/repository")
+local home = vim.fn.expand("~/Archive")
 require('telekasten').setup({
     home         = home,
 
@@ -11,21 +11,21 @@ require('telekasten').setup({
     auto_set_filetype = true,
 
     dailies      = home .. '/' .. 'dailies',
-    weeklies     = home .. '/' .. 'weeklies',
+    weeklies     = nil, --home .. '/' .. 'weeklies',
     templates    = home .. '/' .. 'templates',
 
     -- image subdir for pasting
     -- subdir name
     -- or nil if pasted images shouldn't go into a special subdir
-    image_subdir = "img",
+    image_subdir = nil,
 
     -- markdown file extension
     extension    = ".md",
 
     -- following a link to a non-existing note will create it
     follow_creates_nonexisting = true,
-    dailies_create_nonexisting = true,
-    weeklies_create_nonexisting = true,
+    dailies_create_nonexisting = false,
+    weeklies_create_nonexisting = false,
 
     -- template for new notes (new_note, follow_link)
     -- set to `nil` or do not specify if you do not want a template
@@ -37,7 +37,7 @@ require('telekasten').setup({
 
     -- template for newly created weekly notes (goto_thisweek)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_weekly= home .. '/' .. 'templates/weekly.md',
+    template_new_weekly= nil, -- home .. '/' .. 'templates/weekly.md',
 
     -- image link style
     -- wiki:     ![[image name]]

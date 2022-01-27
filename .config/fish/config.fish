@@ -29,7 +29,7 @@ end
 
 alias ls "exa"
 alias ssh "kitty +kitten ssh"
-alias vault "nvim $HOME/vault"
+alias vault "nvim $HOME/Archive/"
 alias yeet "yay -Rcns"
 alias update "yay -Syu"
 alias tree "exa -T"

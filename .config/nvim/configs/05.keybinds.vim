@@ -41,3 +41,6 @@ nnoremap <leader>t :lua require('telekasten').panel()<CR>
 " alternatively: leader [
 inoremap <leader>[ <cmd>:lua require('telekasten').insert_link({ i=true })<CR>
 inoremap <leader>tt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
+
+" Find and replace highlighted text
+ 
