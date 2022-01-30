@@ -5,7 +5,7 @@ distroFamily="$(cat /etc/*-release | grep ID_LIKE | sed 's/.*[=]//')"
 
 if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
     # Basic installs
-│   sudo apt install python3 python3-pip fish ripgrep kitty -y --no-install-recommends
+│   sudo apt install python3 python3-pip fish ripgrep tilix -y --no-install-recommends
 │   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 │   chmod u+x nvim.appimage
 │   mv nvim.appimage $HOME/.local/bin
@@ -34,7 +34,7 @@ if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
 
 else
     # Installs on Arch
-    yay -S python python-pip fish neovim ripgrep kitty git sqlite3 htop exa discord brave-bin --noconfirm 
+    yay -S python python-pip fish neovim ripgrep tilix git sqlite3 htop exa discord brave-bin --noconfirm 
     yay -Rnc evince eog geary gedit gnome-calculator gnome-help pinyin seahorse texinfo zsh --noconfirm
 
 fi
