@@ -46,7 +46,7 @@ wget "$THEME" -P ../.config/kitty/
 mv ../.config/kitty/gruvbox_dark.conf ../.config/kitty/theme.conf
 
 # Python imports for NVIM and base utils
-pip install pynvim jedi numpy pandas
+#pip install pynvim jedi numpy pandas
 
 # Set fish as default shell
 chsh -s $(which fish)
