@@ -29,8 +29,8 @@ if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
     printf "\nFinalizing and cleaningup..."
     sudo apt update -y
     sudo apt autoremove -y
-else
-    dconf load /org/gnome/ < ../settings_arch.conf
+#else
+#    dconf load /org/gnome/ < ../settings_arch.conf
 fi
 
 git config --global user.email "$email"

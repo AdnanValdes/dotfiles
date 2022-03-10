@@ -26,9 +26,10 @@ function vpn
 end
 
 
-
+alias windows "wmctrl -l"
 alias ls "exa"
-alias vault "nvim $HOME/Archive/"
+alias vault "nvim $HOME/Vault/"
 alias yeet "yay -Rcns"
 alias update "yay -Syu"
 alias tree "exa -T"
+alias shiori "$HOME/.local/shiori"
