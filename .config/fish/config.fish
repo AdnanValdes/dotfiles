@@ -25,7 +25,7 @@ function vpn
     end
 end
 
-
+fish_ssh_agent
 alias windows "wmctrl -l"
 alias ls "exa"
 alias vault "nvim $HOME/Vault/"
