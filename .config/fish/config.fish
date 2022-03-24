@@ -25,10 +25,11 @@ function vpn
     end
 end
 
-
-
+fish_ssh_agent
+alias windows "wmctrl -l"
 alias ls "exa"
 alias vault "nvim $HOME/Vault/"
 alias yeet "yay -Rcns"
 alias update "yay -Syu"
 alias tree "exa -T"
+alias shiori "$HOME/.local/shiori"
