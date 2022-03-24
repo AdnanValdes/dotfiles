@@ -1,7 +1,3 @@
-<div align="center">
-    <img alt"my dotfiles" src="https://dotfiles.github.io/images/dotfiles-logo.png">
-</div>
-
 # my dotfiles
 dotfiles written for Pop!OS and Manjaro.
 
