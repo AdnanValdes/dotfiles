@@ -1,4 +1,4 @@
-for f in split(glob('/home/einhard/.dotfiles/.config/nvim/configs/*.vim'), '\n')
+for f in split(glob('~/.dotfiles/.config/nvim/configs/*.vim'), '\n')
     exe 'source' f
 endfor
 

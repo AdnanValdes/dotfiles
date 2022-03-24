@@ -28,7 +28,7 @@ end
 fish_ssh_agent
 alias windows "wmctrl -l"
 alias ls "exa"
-alias vault "nvim $HOME/Projects/vault/"
+alias vault "nvim $HOME/Vault/"
 alias yeet "yay -Rcns"
 alias update "yay -Syu"
 alias tree "exa -T"
