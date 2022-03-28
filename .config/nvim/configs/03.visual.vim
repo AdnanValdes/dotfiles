@@ -22,6 +22,12 @@ require("indent_blankline").setup {
 }
 END
 
+augroup VCenterCursor
+  au!
+  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+        \ let &scrolloff=winheight(win_getid())/2
+augroup END
+
 " Telekasten settings
 hi tklink ctermfg=72 guifg=#689d6a cterm=bold,underline gui=bold,underline
 hi tkBrackets ctermfg=gray guifg=gray
