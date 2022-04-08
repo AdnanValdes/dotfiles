@@ -34,7 +34,7 @@ if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
 
 else
     # Installs on Arch
-    yay -S python python-pip fish neovim ripgrep tilix git sqlite3 htop exa discord brave-bin obsidian surfshark-vpn steam qbittorrent calibre jellyfin-media-player  --noconfirm 
+    yay -S python python-pip fish neovim ripgrep tilix git sqlite3 htop exa discord brave-bin obsidian surfshark-vpn steam qbittorrent calibre jellyfin-media-player spotifyd spotify-tui  --noconfirm 
     yay -Rnc evince eog geary gedit gnome-calculator gnome-help pinyin seahorse texinfo zsh --noconfirm
     
 
