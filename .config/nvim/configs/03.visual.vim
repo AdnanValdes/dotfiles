@@ -10,6 +10,7 @@ set expandtab
 set shiftwidth=4
 set autoindent
 set wildmode=longest,list
+highlight Normal ctermbg=none
 filetype plugin indent on
 syntax on
 

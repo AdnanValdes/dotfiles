@@ -34,19 +34,19 @@ if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
 
 else
     # Installs on Arch
-    yay -S python python-pip fish neovim ripgrep tilix git sqlite3 htop exa discord brave-bin --noconfirm 
+    yay -S python python-pip fish neovim ripgrep tilix git sqlite3 htop exa discord brave-bin obsidian --noconfirm 
     yay -Rnc evince eog geary gedit gnome-calculator gnome-help pinyin seahorse texinfo zsh --noconfirm
 
 fi
 
 
 # Get and set Gruvbox theme for Kitty
-THEME=https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/gruvbox_dark.conf
-wget "$THEME" -P ../.config/kitty/
-mv ../.config/kitty/gruvbox_dark.conf ../.config/kitty/theme.conf
+#THEME=https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/gruvbox_dark.conf
+#wget "$THEME" -P ../.config/kitty/
+#mv ../.config/kitty/gruvbox_dark.conf ../.config/kitty/theme.conf
 
 # Python imports for NVIM and base utils
-#pip install pynvim jedi numpy pandas
+pip install pynvim jedi numpy pandas
 
 # Set fish as default shell
 chsh -s $(which fish)
