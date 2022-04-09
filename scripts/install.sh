@@ -33,6 +33,25 @@ if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
 #    dconf load /org/gnome/ < ../settings_arch.conf
 fi
 
+## Add network drives
+mkdir -p /home/"$USER"/Trantor
+mkdir -p /home/"$USER"/Terminus
+
+
+terminus="$(showmount -e terminus.earth | sed -n 2p | sed -e 's/\s.*$//')"
+terminusMNT="terminus.earth:"$terminus" /home/"$USER"/Terminus nfs defaults 0 0"
+if ! grep -Fxq "$terminusMNT"  /etc/fstab
+    then
+        sudo echo "terminus.earth:"$terminusMNT" /home/"$USER"/Terminus nfs defaults 0 0" >> /etc/fstab
+fi
+
+trantor="$(showmount -e trantor.earth | sed -n 2p | sed -e 's/\s.*$//')"
+trantorMNT="trantor.earth:"$trantor" /home/"$USER"/Trantor nfs defaults 0 0"
+if ! grep -Fxq "$terminusMNT" /etc/fstab
+    then
+        sudo echo "trantor.earth:"$trantorMNT" /home/"$USER"/Terminus nfs defaults 0 0" >> /etc/fstab
+fi
+
 git config --global user.email "$email"
 git config --global user.name "$username"
 
