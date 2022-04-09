@@ -22,21 +22,9 @@ fi
 # Create symlinks for dotfiles
 ./symlink_dotfiles.sh
 
-# Update dconf from personal settings
-printf "\nLoading dconf configuration..."
-if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
-    dconf load /org/gnome/ < ../settings_debian.dconf
-    printf "\nFinalizing and cleaningup..."
-    sudo apt update -y
-    sudo apt autoremove -y
-#else
-#    dconf load /org/gnome/ < ../settings_arch.conf
-fi
-
 ## Add network drives
 mkdir -p /home/"$USER"/Trantor
 mkdir -p /home/"$USER"/Terminus
-
 
 terminus="$(showmount -e terminus.earth | sed -n 2p | sed -e 's/\s.*$//')"
 terminusMNT="terminus.earth:"$terminus" /home/"$USER"/Terminus nfs defaults 0 0"
