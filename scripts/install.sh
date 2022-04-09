@@ -44,4 +44,8 @@ git config --global user.email "$email"
 git config --global user.name "$username"
 
 rm -rf ~/Music ~/Pictures ~/Public ~/Templates ~/Videos
+
+# Transfer SSH keys
+mkdir -p /home/"$USER"/.ssh
+cp -r ~Trantor/aarchive/ssh/* /home/"$USER"/.ssh/
 printf "\nRespect and enjoy the peace."
