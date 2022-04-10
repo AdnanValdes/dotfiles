@@ -29,13 +29,6 @@ augroup VCenterCursor
         \ let &scrolloff=winheight(win_getid())/2
 augroup END
 
-" Telekasten settings
-hi tklink ctermfg=72 guifg=#689d6a cterm=bold,underline gui=bold,underline
-hi tkBrackets ctermfg=gray guifg=gray
-hi link CalNavi CalRuler
-hi tkTagSep ctermfg=gray guifg=gray
-hi tkTag ctermfg=175 guifg=#d3869B
-
 " Disable Netrw on start
 let g:netrw_banner=0
 let ghregex='\(^\|\s\s\)\zs\.\S\+'

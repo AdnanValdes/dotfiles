@@ -28,8 +28,6 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Plugins to run zettelkasten
 Plug 'nvim-telescope/telescope-media-files.nvim'
-Plug 'renerocksai/telekasten.nvim'
-Plug 'renerocksai/calendar-vim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'mzlogin/vim-markdown-toc'
 call plug#end()
