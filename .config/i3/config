@@ -23,7 +23,8 @@ exec --no-startup-id ~/set_once_i3.sh
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: Noto Sans Regular 10
+#font pango: Noto Sans Regular 10
+font pango: Source Code Pro Regular 10
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -192,7 +193,7 @@ bindsym $mod+Shift+r restart
 bindsym F1 exec ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
-# bindsym $mod+F1 exec xed ~/.config/i3/keybindings
+bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
@@ -398,7 +399,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 # autotiling script
 # https://github.com/nwg-piotr/autotiling
 # `yay -S autotiling ;) (it is in AUR)
-#exec_always --no-startup-id autotiling
+exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
 exec --no-startup-id sleep 2 && xfce4-terminal
@@ -467,10 +468,10 @@ set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
+client.focused		    $lightblue	$darkblue	$white		$white		$mediumgrey
+client.unfocused	    $darkblue	$darkblue	$grey		$white		$darkgrey
+client.focused_inactive	$darkblue	$darkblue	$grey		$white		$black
+client.urgent		    $urgentred	$urgentred	$white		$white		$yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -479,7 +480,8 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Noto Sans Regular 10
+		#font pango: Noto Sans Regular 10
+        font pango: Source Code Pro Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position top
 #	    	i3bar_command i3bar --transparency
@@ -499,7 +501,7 @@ strip_workspace_numbers yes
 		    background         $darkgrey
 		    statusline         $white
 #                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+		focused_workspace	$mediumgrey	   	    $grey		$darkgrey	$purple
 		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
 		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
@@ -562,3 +564,10 @@ bindsym $mod+t exec rofi -show window \
 #exec --no-startup-id greenclip daemon>/dev/null
 #bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
 #		-config ~/.config/rofi/rofidmenu.rasi
+
+
+#####################################
+# Extras:                           #
+#####################################
+
+focus_follows_mouse no
