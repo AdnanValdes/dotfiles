@@ -19,23 +19,16 @@ if [[ "$distro" == "Ubuntu" ]] || [[ "$distroFamily" == "Debian" ]]; then
     curl -O https://dl.discordapp.net/apps/linux/0.0.16/discord-0.0.16.deb
     sudo apt install ./discord-0.0.16.deb -y
     rm ./discord-0.0.16.deb
-
-    ## Brave browser
-    sudo apt install apt-transport-https curl -y
-    sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-    sudo apt update -y
-    sudo apt install brave-browser -y
     
     # Clean up
-    sudo apt --purge remove evince eog geary gedit gnome-calculator gnome-help pinyin seahorse texinfo -y
+    xargs -a remove sudo apt --purge remove -y
     sudo apt autoremove -y
     # Arch based installs
 
 else
     # Installs on Arch
-    yay -S python python-pip fish neovim ripgrep tilix git sqlite3 htop exa discord brave-bin obsidian surfshark-vpn steam qbittorrent calibre jellyfin-media-player spotifyd spotify-tui  --noconfirm 
-    yay -Rnc evince eog geary gedit gnome-calculator gnome-help pinyin seahorse texinfo zsh --noconfirm
+    xargs -a packages yay -S --noconfirm
+    xargs -a to_remove yay -Rnc --noconfirm
 fi
 
 # Python imports for NVIM and base utils
