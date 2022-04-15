@@ -1,3 +1,5 @@
+set clipboard+=unnamedplus
+
 function! WinMove(key)
     let t:curwin = winnr()
     exec "wincmd ".a:key
