@@ -26,7 +26,7 @@ function vpn
 end
 
 function sp
-    if ps -u $USER | grep spotifyd then
+    if ps -u $USER | grep -q spotifyd;
         spt
     else
         spotifyd && spt
