@@ -25,6 +25,14 @@ function vpn
     end
 end
 
+function sp
+    if ps -u $USER | grep spotifyd then
+        spt
+    else
+        spotifyd && spt
+    end
+end
+
 fish_ssh_agent
 alias windows "wmctrl -l"
 alias ls "exa"
